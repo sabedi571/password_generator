@@ -11,25 +11,25 @@ function generaterandomPassword() {
     
 
     
-    var verifyLowerCase=confirm("would you like to incude lowercase letters");
-    var verifyUpperCase=confirm("would you like to include uppercase letters");
-    var verifyNumbers=confirm("would you like to include numbers");
-    var verifySpecial=confirm("would you like to inckude soecial characters");
+    var verifyLowerCase=confirm("would you like to incude lower case letters in your password (click OK for yes and Cancel for no)");
+    var verifyUpperCase=confirm("would you like to include uppercase letters in your password (click OK for yes and Cancel for no)");
+    var verifyNumbers=confirm("would you like to include numbers (click OK for yes and Cancel for no)");
+    var verifySpecial=confirm("would you like to include special characters (!@#$ (click OK for yes and Cancel for no)");
 
     
     while (verifyLowerCase == false && verifyUpperCase == false && verifyNumbers == false && verifySpecial == false) {
         alert("You must pick atleast one type");
-        verifyLowerCase=confirm("would you like to incude lowercase letters");
-        verifyUpperCase=confirm("would you like to include uppercase letters");
-        verifyNumbers=confirm("would you like to include numbers");
-        verifySpecial=confirm("would you like to inckude soecial characters");
+        verifyLowerCase=confirm("would you like to incude lowercase letters (click OK for yes and Cancel for no)");
+        verifyUpperCase=confirm("would you like to include uppercase letters (click OK for yes and Cancel for no)");
+        verifyNumbers=confirm("would you like to include numbers (click OK for yes and Cancel for no)");
+        verifySpecial=confirm("would you like to inckude soecial characters (click OK for yes and Cancel for no)");
     }
 
     
 
     var choosepasswordLength=parseInt(prompt("Please pick the characters you like and make sure they are between 8 and 128"));
     
-    while(choosepasswordLength < 8 || choosepasswordLength > 128 || typeof(choosepasswordLength) != "number" || choosepasswordLength === NaN || choosepasswordLength === null) {
+    while(choosepasswordLength < 8 || choosepasswordLength > 128) {
         alert("Please choose a number between 8 and 128");
         choosepasswordLength=parseInt(prompt("Please pick the characters you like and make sure they are between 8 and 128"));
     } 
