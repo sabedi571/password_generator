@@ -11,18 +11,18 @@ function generaterandomPassword() {
     
 
     
-    var verifyLowerCase=confirm("would you like to incude lower case letters in your password (click OK for yes and Cancel for no)");
-    var verifyUpperCase=confirm("would you like to include uppercase letters in your password (click OK for yes and Cancel for no)");
-    var verifyNumbers=confirm("would you like to include numbers (click OK for yes and Cancel for no)");
-    var verifySpecial=confirm("would you like to include special characters (!@#$ (click OK for yes and Cancel for no)");
+    var verifyLowerCase=confirm("Would you like to incude Lower Case letters in your password (click OK for YES and Cancel for NO)");
+    var verifyUpperCase=confirm("would you like to include Upper Case letters in your password (click OK for YES and Cancel for NO)");
+    var verifyNumbers=confirm("would you like to include numbers in your password (click OK for YES and Cancel for NO)");
+    var verifySpecial=confirm("would you like to include special characters in your passwords (!@#$ (click OK for YES and Cancel for NO)");
 
     
     while (verifyLowerCase == false && verifyUpperCase == false && verifyNumbers == false && verifySpecial == false) {
         alert("You must pick atleast one type");
-        verifyLowerCase=confirm("would you like to incude lowercase letters (click OK for yes and Cancel for no)");
-        verifyUpperCase=confirm("would you like to include uppercase letters (click OK for yes and Cancel for no)");
-        verifyNumbers=confirm("would you like to include numbers (click OK for yes and Cancel for no)");
-        verifySpecial=confirm("would you like to inckude soecial characters (click OK for yes and Cancel for no)");
+        verifyLowerCase=confirm("Would you like to incude Lower Case letters in your password (click OK for YES and Cancel for NO)");
+        verifyUpperCase=confirm("would you like to include Upper Case letters in your password (click OK for YES and Cancel for NO)");
+        verifyNumbers=confirm("would you like to include numbers in your password (click OK for YES and Cancel for NO)");
+        verifySpecial=confirm("would you like to include special characters in your passwords (!@#$ (click OK for YES and Cancel for NO)");
     }
 
     
