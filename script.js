@@ -1,69 +1,69 @@
-let caseArray=[];
-let lowerCaseChar=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-let upperCaseChar=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","W","X","Y","Z"];
-let numericChar=["0","1","2","3","4","5","6","7","8","9"];
-let specialChar=["!","@","#","$","%","^","&","*","(",")"];
+var newCharacterlist=[];
+var lowercasealphabets=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var Uppercasealphabets=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","W","X","Y","Z"];
+var numbers=["0","1","2","3","4","5","6","7","8","9"];
+var special=["!","@","#","$","%","^","&","*","(",")"];
 
-function generatePassword() {
-
-    let passwordString="";
+function generaterandomPassword() {
 
     
-    let useLowerCase=confirm("Do you want to include lowercase characters?");
-    let useUpperCase=confirm("Do you want to include uppercase characters?");
-    let useNumeric=confirm("Do you want to include numeric characters?");
-    let useSpecial=confirm("Do you want to include special characters?");
 
     
-    while (useLowerCase == false && useUpperCase == false && useNumeric == false && useSpecial == false) {
-        alert("Please select one type of character");
-        useLowerCase=confirm("Do you want to include lowercase characters?");
-        useUpperCase=confirm("Do you want to include uppercase characters?");
-        useNumeric=confirm("Do you want to include numeric characters?");
-        useSpecial=confirm("Do you want to include special characters?");
+    var verifyLowerCase=confirm("would you like to incude lowercase letters");
+    var verifyUpperCase=confirm("would you like to include uppercase letters");
+    var verifyNumbers=confirm("would you like to include numbers");
+    var verifySpecial=confirm("would you like to inckude soecial characters");
+
+    
+    while (verifyLowerCase == false && verifyUpperCase == false && verifyNumbers == false && verifySpecial == false) {
+        alert("You must pick atleast one type");
+        verifyLowerCase=confirm("would you like to incude lowercase letters");
+        verifyUpperCase=confirm("would you like to include uppercase letters");
+        verifyNumbers=confirm("would you like to include numbers");
+        verifySpecial=confirm("would you like to inckude soecial characters");
     }
 
     
 
-    let passwordLength=parseInt(prompt("How many characters do you want the password to be? The password cannot be less than 8 or more than 128 characters."));
+    var choosepasswordLength=parseInt(prompt("Please pick the characters you like and make sure they are between 8 and 128"));
     
-    while(passwordLength < 8 || passwordLength > 128 || typeof(passwordLength) != "number" || passwordLength === NaN || passwordLength === null) {
-        alert("Please choose a number that is more than 8 and less than 128 characters");
-        passwordLength=parseInt(prompt("How many characters do you want the password to be? The password cannot be less than 8 or more than 128 characters."));
+    while(choosepasswordLength < 8 || choosepasswordLength > 128 || typeof(choosepasswordLength) != "number" || choosepasswordLength === NaN || choosepasswordLength === null) {
+        alert("Please choose a number between 8 and 128");
+        choosepasswordLength=parseInt(prompt("Please pick the characters you like and make sure they are between 8 and 128"));
     } 
 
-    if (useLowerCase==true){
-        caseArray.push(lowerCaseChar);
+    if (verifyLowerCase){
+        newCharacterlist = newCharacterlist.concat(lowercasealphabets);
     
     }
-    if (useUpperCase==true){
-        caseArray.push(upperCaseChar)
+    if (verifyUpperCase){
+        newCharacterlist = newCharacterlist.concat(Uppercasealphabets);
     
     }
-    if (useNumeric==true){
-        caseArray.push(numericChar)
+    if (verifyNumbers){
+        newCharacterlist = newCharacterlist.concat(numbers);
         
     }
-    if (useSpecial==true){
-        caseArray.push(specialChar)
+    if (verifySpecial){
+        newCharacterlist = newCharacterlist.concat(special);
     }
 
-   
+    var passwordString="";
 
-    for(let i=0;i<passwordLength;i++){
+    for(let i=0;i<choosepasswordLength;i++){
 
-        let randomCharArrayNum;
-        let selectedCharArray;
-        let randomCharNum;
-        let randomChar;
+        var randomCharArrayNum;
+        var selectedCharArray;
+        var randomCharNum;
+        var randomChar;
 
         
         
-        randomCharArrayNum= parseInt(Math.floor(Math.random()*caseArray.length)); 
+        randomCharArrayNum= parseInt(Math.floor(Math.random()*newCharacterlist.length)); 
         
         
 
-        selectedCharArray=caseArray[randomCharArrayNum]; 
+        selectedCharArray=newCharacterlist[randomCharArrayNum]; 
         
         
 
@@ -74,14 +74,17 @@ function generatePassword() {
         randomChar=selectedCharArray[randomCharNum];
         
         passwordString+=randomChar;
+
+        
        
         
     }
+    
    
     passwordEntry.textContent=passwordString;    
 }
 
 
-let generateButton=document.getElementById("generate");
-let passwordEntry=document.getElementById("password");
-generateButton.onclick = generatePassword;
+var generateButton=document.getElementById("generate");
+var passwordEntry=document.getElementById("password");
+generateButton.onclick = generaterandomPassword;
