@@ -47,41 +47,16 @@ function generaterandomPassword() {
     if (verifySpecial){
         newCharacterlist = newCharacterlist.concat(special);
     }
+    
+    var passwordString=""
 
-    var passwordString="";
-
-    for(let i=0;i<choosepasswordLength;i++){
-
-        var randomCharArrayNum;
-        var selectedCharArray;
-        var randomCharNum;
-        var randomChar;
-
-        
-        
-        randomCharArrayNum= parseInt(Math.floor(Math.random()*newCharacterlist.length)); 
-        
-        
-
-        selectedCharArray=newCharacterlist[randomCharArrayNum]; 
-        
-        
-
-        randomCharNum=Math.floor(Math.random()*selectedCharArray.length);
-
-        
-
-        randomChar=selectedCharArray[randomCharNum];
-        
-        passwordString+=randomChar;
-
-        
-       
+    for (var i = 0; i < choosepasswordLength; i++) {
+        passwordString = passwordString + newCharacterlist[Math.floor(Math.random() * newCharacterlist.length)];
         
     }
-    
    
     passwordEntry.textContent=passwordString;    
+
 }
 
 
