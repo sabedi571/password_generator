@@ -17,4 +17,4 @@ I defined the selection criteria for all possible values before the generate ran
 
 Then i concatenated my selection to an empty array. 
 
-Lastly i ran a for loop to take the selected array of all approved characters and present them in a new empty list called passwordString based on the lenghth of the pass word picked. 
+Lastly i ran a for loop to take the selected array of all approved characters and present them in a new empty list called passwordString based on the lenghth of the password picked. 

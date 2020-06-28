@@ -27,11 +27,11 @@ function generaterandomPassword() {
 
     
 
-    var choosepasswordLength=parseInt(prompt("Please pick the characters you like and make sure they are between 8 and 128"));
+    var choosepasswordLength=parseInt(prompt("Please enter the length you want your password to be between 8 and 128"));
     
     while(choosepasswordLength < 8 || choosepasswordLength > 128) {
         alert("Please choose a number between 8 and 128");
-        choosepasswordLength=parseInt(prompt("Please pick the characters you like and make sure they are between 8 and 128"));
+        choosepasswordLength=parseInt(prompt("Please enter the length between 8 and 128Please enter the length you want your password to be between 8 and 128"));
     } 
 
     if (verifyLowerCase){
